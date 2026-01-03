@@ -253,7 +253,7 @@ Contributions are welcome! Here’s how to get started:
     `git push origin feature/YourFeature`
 5.  Open a pull request.
 
-> 💡 Please read our [Contributing Guidelines](./CONTRIBUTING.md) and open an issue first for major feature ideas or changes.
+> 💡 Please read our **[Contributing Guidelines](CONTRIBUTING.md)** and open an issue first for major feature ideas or changes.
 
 ---
 
