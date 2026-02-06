@@ -82,8 +82,7 @@ void radixSortDouble(
   for (var i = 0; i < n; i++) {
     final bits = unsignedView[i];
     unsignedView[i] = (bits & signMask) != 0
-        ? bits ^
-              signMask // Originally positive: flip sign bit only
+        ? bits ^ signMask // Originally positive: flip sign bit only
         : ~bits; // Originally negative: flip all bits
   }
 

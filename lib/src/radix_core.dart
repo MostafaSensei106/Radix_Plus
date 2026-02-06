@@ -19,9 +19,8 @@ void radixSortCore(Uint32List list, {bool reuseBuffer = true}) {
   final listLength = list.length;
 
   // Get a buffer from the pool or create a new one
-  final buffer = reuseBuffer
-      ? u32BufferPool.get(listLength)
-      : Uint32List(listLength);
+  final buffer =
+      reuseBuffer ? u32BufferPool.get(listLength) : Uint32List(listLength);
 
   const bitsPerPass = 8;
   const bucketCount = 256; // 2^8

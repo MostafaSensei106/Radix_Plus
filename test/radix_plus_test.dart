@@ -31,23 +31,29 @@ void main() {
     }
 
     // --- Ascending Tests ---
-    testSort('should correctly sort an unsorted unsigned list', [
-      5,
-      2,
-      8,
-      1,
-      9,
-      4,
-    ], signed: false);
-    testSort('should correctly sort a mixed signed list', [
-      5,
-      -2,
-      8,
-      -1,
-      0,
-      9,
-      -4,
-    ], signed: true);
+    testSort(
+        'should correctly sort an unsorted unsigned list',
+        [
+          5,
+          2,
+          8,
+          1,
+          9,
+          4,
+        ],
+        signed: false);
+    testSort(
+        'should correctly sort a mixed signed list',
+        [
+          5,
+          -2,
+          8,
+          -1,
+          0,
+          9,
+          -4,
+        ],
+        signed: true);
 
     // --- Descending Tests ---
     testSort(
@@ -64,20 +70,26 @@ void main() {
     );
 
     // --- Edge Case Tests ---
-    testSort('should handle max 32-bit unsigned value', [
-      10,
-      5,
-      0xFFFFFFFF,
-      0,
-      100,
-    ], signed: false);
-    testSort('should handle min/max signed values', [
-      10,
-      -5,
-      0x7FFFFFFF,
-      -0x80000000,
-      0,
-    ], signed: true);
+    testSort(
+        'should handle max 32-bit unsigned value',
+        [
+          10,
+          5,
+          0xFFFFFFFF,
+          0,
+          100,
+        ],
+        signed: false);
+    testSort(
+        'should handle min/max signed values',
+        [
+          10,
+          -5,
+          0x7FFFFFFF,
+          -0x80000000,
+          0,
+        ],
+        signed: true);
 
     // --- Error Handling Tests ---
     test('should throw for unsupported bitsPerPass', () {
@@ -120,30 +132,39 @@ void main() {
       });
     }
 
-    testSort('should correctly sort mixed floats', [
-      5.5,
-      -2.2,
-      8.8,
-      -1.1,
-      0.0,
-      9.9,
-      -4.4,
-    ], reuseBuffer: true);
-    testSort('should handle special float values', [
-      1.0,
-      double.infinity,
-      -2.0,
-      double.negativeInfinity,
-      0.0,
-      -0.0,
-    ], reuseBuffer: true);
-    testSort('should handle NaN values', [
-      1.0,
-      double.nan,
-      -2.0,
-      5.0,
-      double.nan,
-    ], reuseBuffer: true);
+    testSort(
+        'should correctly sort mixed floats',
+        [
+          5.5,
+          -2.2,
+          8.8,
+          -1.1,
+          0.0,
+          9.9,
+          -4.4,
+        ],
+        reuseBuffer: true);
+    testSort(
+        'should handle special float values',
+        [
+          1.0,
+          double.infinity,
+          -2.0,
+          double.negativeInfinity,
+          0.0,
+          -0.0,
+        ],
+        reuseBuffer: true);
+    testSort(
+        'should handle NaN values',
+        [
+          1.0,
+          double.nan,
+          -2.0,
+          5.0,
+          double.nan,
+        ],
+        reuseBuffer: true);
   });
 
   group('radixSortParallelUnsigned', () {
