@@ -9,7 +9,7 @@ repository: https://github.com/MostafaSensei106/Radix_Plus
 homepage: https://github.com/MostafaSensei106/Radix_Plus
 
 environment:
-  sdk: ^3.10.1
+  sdk: ">=3.0.0 <4.0.0"
 
 
 dev_dependencies:
