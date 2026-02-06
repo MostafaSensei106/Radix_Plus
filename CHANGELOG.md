@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.0.5
+
+- build(sdk): Relax Dart SDK version constraint
+
 ## 1.0.4
 
 - perf(parallel): Overhaul parallel sorting for improved performance and memory usage.

@@ -16,10 +16,12 @@ void radixSortCore(Uint32List list, {bool reuseBuffer = true}) {
     return;
   }
 
-  final n = list.length;
+  final listLength = list.length;
 
   // Get a buffer from the pool or create a new one
-  final buffer = reuseBuffer ? u32BufferPool.get(n) : Uint32List(n);
+  final buffer = reuseBuffer
+      ? u32BufferPool.get(listLength)
+      : Uint32List(listLength);
 
   const bitsPerPass = 8;
   const bucketCount = 256; // 2^8
@@ -42,7 +44,7 @@ void radixSortCore(Uint32List list, {bool reuseBuffer = true}) {
     var minBucket = 255;
     var maxBucket = 0;
 
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < listLength; i++) {
       final bucket = (currentList[i] >> shift) & 0xFF;
       count[bucket]++;
 
@@ -63,7 +65,7 @@ void radixSortCore(Uint32List list, {bool reuseBuffer = true}) {
 
     // 3. Place elements into the other list in sorted order
     // Process backwards to maintain stability
-    for (var i = n - 1; i >= 0; --i) {
+    for (var i = listLength - 1; i >= 0; --i) {
       final value = currentList[i];
       final bucket = (value >> shift) & 0xFF;
       otherList[--count[bucket]] = value;
